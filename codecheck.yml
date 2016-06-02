@@ -1,0 +1,10 @@
+build:
+  - npm install
+  - gem install em-websocket
+  - gem install thin
+  - gem install sinatra
+web:
+  command: ruby app/server.rb
+  port: 9000
+  console: true 
+test: mocha tests --recursive

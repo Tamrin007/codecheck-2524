@@ -1,0 +1,29 @@
+{
+  "name": "sprint2-bot-intermediate-challenge",
+  "version": "1.0.0",
+  "description": "Intermediate level bot challenge for codecheck sprint2",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sukeshni/sprint2-bot-intermediate-challenge.git"
+  },
+  "keywords": [
+    "mocha",
+    "api-first-spec",
+    "REST",
+    "API"
+  ],
+  "author": "Givery Inc.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sukeshni/sprint2-bot-intermediate-challenge/issues"
+  },
+  "homepage": "https://github.com/sukeshni/sprint2-bot-intermediate-challenge#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "ws": "^1.1.0"
+  }
+}
