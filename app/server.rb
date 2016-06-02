@@ -2,6 +2,7 @@ require 'em-websocket'
 require 'thin'
 require 'sinatra'
 require 'json'
+require_relative './bot'
 
 set :public_folder, './app'
 
@@ -27,6 +28,20 @@ EM.run do
             connections.each do |conn|
                 send_msg = {"data" => msg}
                 conn.send(send_msg.to_json)
+            end
+            words = msg.split(" ")
+            if words[0] = "bot"
+                input = {
+                    "command": words[1],
+                    "data": words[2]
+                }
+                p words
+                bot = Bot.new(input)
+                bot.generateHash()
+                connections.each do |conn|
+                    send_msg = {"data" => bot.hash}
+                    conn.send(send_msg.to_json)
+                end
             end
             puts "Recieved message: #{msg}"
         end
