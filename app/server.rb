@@ -30,12 +30,11 @@ EM.run do
                 conn.send(send_msg.to_json)
             end
             words = msg.split(" ")
-            if words[0] = "bot"
+            if words[0] = "bot" && words.length == 3 then
                 input = {
                     "command": words[1],
                     "data": words[2]
                 }
-                p words
                 bot = Bot.new(input)
                 bot.generateHash()
                 connections.each do |conn|
@@ -43,7 +42,6 @@ EM.run do
                     conn.send(send_msg.to_json)
                 end
             end
-            puts "Recieved message: #{msg}"
         end
     end
 end
